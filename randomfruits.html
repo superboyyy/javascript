@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>随机发放水果</title>
+</head>
+<body>
+<div class="content">
+    <div id="fruit">您得到的水果是：</div>
+    <script type="text/javascript">
+        var fruit = ["apple","banana","orange","watermelon","mango"];
+        var num = Math.floor(Math.random()*fruit.length);
+
+        document.getElementById("fruit").innerHTML="您得到的水果是：" + fruit[num];
+
+    </script>
+</div>
+</body>
+</html>
