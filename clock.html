@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<div id="text">
+    <p id="time"></p>
+    <input type="button" id="bian" onclick="chance()" value="暂停">
+</div>
+
+<script>
+    //编写程序，实现电子时钟自动走动的效果，
+    //并提供一个按钮控制电子时钟是否停止走动。
+    //要求清晰的程序步骤，并为程序标注释。
+    var run = true;		// 控制时间是否走动
+    function chance_str(n){		// 对两位数补零
+        if (n<10){
+            n = "0" + n
+        }
+        return n
+    }
+    function time(){	// 获取时间
+        //console.log(run)
+        if(run){
+            var day = new Date();
+            var h = day.getHours();// 对两位数补零
+            h = chance_str(h)
+            var m = day.getMinutes();// 对两位数补零
+            m = chance_str(m)
+            var s = day.getSeconds();// 对两位数补零
+            s = chance_str(s)
+            document.getElementById('time').innerHTML =
+                h + ":" + m + ":" + s;
+            setTimeout(time, 300);		// 一秒刷新一次时间
+        }
+    }
+
+    time()	// 调用时间函数,初始化界面
+
+    function chance(){	// 控制按钮事件
+        if(run == true){	// 暂停操作
+            run = !run;
+            document.getElementById('bian').value = "开始";
+        }else{		// 开始操作
+            run = !run;
+            document.getElementById('bian').value = "暂停";
+            time()
+        }
+    }
+
+</script>
+</body>
+</html>
