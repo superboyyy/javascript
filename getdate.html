@@ -11,12 +11,14 @@
         <div id="time">现在时间：00点00分</div>
         <div id="meet">上午好！</div>
         <script type="text/javascript">
+            // setTimeout("location.href='getdate.html'",300);
             var date = new Date();
             var year = date.getFullYear();
             var month = date.getMonth() + 1;
             var day = date.getDate();
             var hr = date.getHours();
             var min = date.getMinutes();
+            // var sec = date.getSeconds();
 
             document.getElementById("date").innerHTML="今天日期：" + year + "年" + month + "月" + day + "日"
             document.getElementById("time").innerHTML="现在时间：" + hr + "点" + min + "分"
